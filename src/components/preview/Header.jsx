@@ -1,4 +1,4 @@
-import "../styles/Header.css";
+import "../../styles/preview/Header.css";
 
 function Header({ name, phone, email, website }) {
   // Strip the phone number and reformat

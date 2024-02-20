@@ -1,4 +1,4 @@
-import "../styles/Resume.css";
+import "../../styles/preview/Resume.css";
 import Header from "./Header";
 import Section from "./Section";
 import Education from "./Education";
@@ -20,12 +20,14 @@ export default function Resume() {
           school="University of California, Berkeley"
           date="05/2021"
           details={[
-            { title: "GPA", description: "3.77/4.00" },
+            { id: 0, title: "GPA", description: "3.77/4.00" },
             {
+              id: 1,
               title: "Emphasis",
               description: "Modeling and control of dynamical systems",
             },
             {
+              id: 2,
               title: "Select Coursework",
               description: "Control of Unmanned Aerial Vehicles",
             },
@@ -36,14 +38,17 @@ export default function Resume() {
           school="University of California, Berkeley"
           date="12/2019"
           details={[
-            { title: "GPA", description: "3.90/4.00, Graduation with Honors" },
             {
+              id: 0,
+              title: "GPA",
+              description: "3.90/4.00, Graduation with Honors",
+            },
+            {
+              id: 1,
               title: "Select Coursework",
               description: "Lagrangian Dynamics, Advanced Linear Algebra",
             },
           ]}
-          gpa="3.90/4.00, Graduation with Honors"
-          courses="Lagrangian Dynamics, Advanced Linear Algebra"
         ></Education>
       </Section>
       <Section name="Skills">

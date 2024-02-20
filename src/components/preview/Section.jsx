@@ -1,4 +1,4 @@
-import "../styles/Section.css";
+import "../../styles/preview/Section.css";
 
 export default function Section({ name, children }) {
   return (

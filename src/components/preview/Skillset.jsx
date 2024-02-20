@@ -1,4 +1,4 @@
-import "../styles/Skillset.css";
+import "../../styles/preview/Skillset.css";
 import Bullet from "./Bullet";
 import { Fragment } from "react";
 

@@ -1,4 +1,5 @@
-import "../styles/Education.css";
+import { Fragment } from "react";
+import "../../styles/preview/Education.css";
 import Bullet from "./Bullet";
 
 export default function Education({ degree, school, date, details }) {
@@ -15,10 +16,10 @@ export default function Education({ degree, school, date, details }) {
       </div>
       <div className="education-details">
         {details.map((item) => (
-          <>
+          <Fragment key={item.id}>
             <p>{item.title}</p>
             <p>{item.description}</p>
-          </>
+          </Fragment>
         ))}
       </div>
     </div>

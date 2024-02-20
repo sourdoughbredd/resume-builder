@@ -1,4 +1,4 @@
-import "../styles/WorkExperience.css";
+import "../../styles/preview/WorkExperience.css";
 import Bullet from "./Bullet";
 
 export default function WorkExperience({
