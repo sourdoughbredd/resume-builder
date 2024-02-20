@@ -3,7 +3,7 @@ import Bullet from "./Bullet";
 
 export default function Education({ degree, school, date, details }) {
   return (
-    <div className="education-container">
+    <div className="education">
       <div className="education-header">
         <Bullet></Bullet>
         <div className="education-degree">
