@@ -5,14 +5,14 @@ import Education from "./Education";
 import WorkExperience from "./WorkExperience";
 import Skillset from "./Skillset";
 
-export default function Resume() {
+export default function Resume({ resumeInfo }) {
   return (
     <div className="resume">
       <Header
-        name="Brett Bussell"
-        phone="(209) 585 5343"
-        email="bwbussell24@gmail.com"
-        website="www.linkedin.com/in/brett-bussell"
+        name={resumeInfo.Header.name}
+        phone={resumeInfo.Header.phone}
+        email={resumeInfo.Header.email}
+        website={resumeInfo.Header.website}
       ></Header>
       <Section name="Education">
         <Education
