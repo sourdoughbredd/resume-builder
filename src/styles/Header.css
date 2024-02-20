@@ -4,13 +4,13 @@
   align-items: center;
 }
 
-h2 {
+.header h2 {
   margin: 0;
   padding: 0;
   text-transform: uppercase;
 }
 
-ul {
+.header ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -19,6 +19,6 @@ ul {
   gap: 1rem;
 }
 
-li:nth-child(even) {
+.header li:nth-child(even) {
   font-size: 0.6rem;
 }
