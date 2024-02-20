@@ -1,0 +1,26 @@
+.work-experience p {
+  margin: 0;
+}
+
+.work-experience ul {
+  margin: 0;
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.work-title {
+  flex-grow: 1;
+}
+
+.work-title strong {
+  font-variant: small-caps;
+}
+
+.work-date {
+  justify-self: flex-end;
+  text-align: right;
+}
