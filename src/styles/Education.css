@@ -1,4 +1,4 @@
-p {
+.education p {
   margin: 0;
 }
 
@@ -14,6 +14,7 @@ p {
 
 .education-date {
   justify-self: flex-end;
+  text-align: right;
 }
 
 .education-details {
