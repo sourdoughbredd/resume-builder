@@ -3,6 +3,7 @@ import Header from "./Header";
 import Section from "./Section";
 import Education from "./Education";
 import WorkExperience from "./WorkExperience";
+import Skillset from "./Skillset";
 
 export default function Resume() {
   return (
@@ -44,6 +45,43 @@ export default function Resume() {
           gpa="3.90/4.00, Graduation with Honors"
           courses="Lagrangian Dynamics, Advanced Linear Algebra"
         ></Education>
+      </Section>
+      <Section name="Skills">
+        <Skillset
+          skillsets={[
+            {
+              name: "Programming",
+              skills: [
+                "Python",
+                "MATLAB",
+                "Simulink",
+                "C/C++",
+                "ROS",
+                "Bash",
+                "LaTeX",
+              ],
+            },
+            {
+              name: "Software",
+              skills: [
+                "LabVIEW",
+                "VMware",
+                "Git",
+                "Solidworks",
+                "Fusion",
+                "AutoCAD",
+              ],
+            },
+            {
+              name: "Other",
+              skills: [
+                "State estimation",
+                "Modeling/simulation",
+                "Technical writing and presenting",
+              ],
+            },
+          ]}
+        ></Skillset>
       </Section>
       <Section name="Work Experience">
         <WorkExperience
