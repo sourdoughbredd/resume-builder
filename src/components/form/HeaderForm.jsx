@@ -1,18 +1,49 @@
-export default function HeaderForm({ resumeInfo, setResumeInfo }) {
-  function nameChanged(e) {
-    let newResumeInfo = { ...resumeInfo };
-    let oldFirst = "";
-    let oldLast = "";
-    if (newResumeInfo.Header.name) {
-      [oldFirst, oldLast] = newResumeInfo.Header.name.split(" ");
+export default function HeaderForm({ headerInfo, setHeaderInfo }) {
+  // Make info have firstname, lastname, phone, email, and website
+  function infoChanged(e) {
+    console.log("Header info changed!");
+    let newInfo = { ...headerInfo };
+
+    // Name Changed
+    if (e.target.id === "firstname" || e.target.id === "lastname") {
+      let oldFirst = "";
+      let oldLast = "";
+      if (newInfo.name) {
+        [oldFirst, oldLast] = newInfo.name.split(" ");
+      }
+      if (e.target.id === "firstname") {
+        newInfo.name = e.target.value + " " + oldLast;
+      } else {
+        newInfo.name = oldFirst + " " + e.target.value;
+      }
+      setHeaderInfo(newInfo);
+      return;
     }
-    if (e.target.id === "firstname") {
-      newResumeInfo.Header.name = e.target.value + " " + oldLast;
-    } else {
-      newResumeInfo.Header.name = oldFirst + " " + e.target.value;
+
+    // Phone Changed
+    if (e.target.id === "phone") {
+      newInfo.phone = e.target.value;
+      setHeaderInfo(newInfo);
+      return;
     }
-    setResumeInfo(newResumeInfo);
+
+    // Email Changed
+    if (e.target.id === "email") {
+      newInfo.email = e.target.value;
+      setHeaderInfo(newInfo);
+      return;
+    }
+
+    // Website Changed
+    if (e.target.id === "website") {
+      newInfo.website = e.target.value;
+      setHeaderInfo(newInfo);
+      return;
+    }
   }
+
+  // Extract first and last name
+  const [firstName, lastName] = headerInfo.name.split(" ");
 
   return (
     <form className="header-form">
@@ -21,18 +52,41 @@ export default function HeaderForm({ resumeInfo, setResumeInfo }) {
         name="firstname"
         id="firstname"
         placeholder="First Name"
-        onChange={nameChanged}
+        onChange={infoChanged}
+        value={firstName}
       />
       <input
         type="text"
         name="lastname"
         id="lastname"
         placeholder="Last Name"
-        onChange={nameChanged}
+        onChange={infoChanged}
+        value={lastName}
       />
-      <input type="tel" name="phone" id="phone" placeholder="Phone Number" />
-      <input type="email" name="email" id="email" placeholder="Email" />
-      <input type="url" name="website" id="website" placeholder="Website" />
+      <input
+        type="tel"
+        name="phone"
+        id="phone"
+        placeholder="Phone Number"
+        onChange={infoChanged}
+        value={headerInfo.phone}
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+        onChange={infoChanged}
+        value={headerInfo.email}
+      />
+      <input
+        type="url"
+        name="website"
+        id="website"
+        placeholder="Website"
+        onChange={infoChanged}
+        value={headerInfo.website}
+      />
     </form>
   );
 }
