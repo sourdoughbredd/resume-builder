@@ -2,7 +2,9 @@ function EducationInstance({
   educationInstanceInfo,
   setEducationInstanceInfo,
 }) {
-  const [month, year] = educationInstanceInfo.date.split("/");
+  let [month, year] = educationInstanceInfo.date.split("/");
+  month = month === undefined ? "" : month;
+  year = year === undefined ? "" : year;
 
   // Access/update Education Instance Extras State
   function setExtras(newExtras) {
