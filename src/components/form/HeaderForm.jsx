@@ -42,7 +42,9 @@ export default function HeaderForm({ headerInfo, setHeaderInfo }) {
   }
 
   // Extract first and last name
-  const [firstName, lastName] = headerInfo.name.split(" ");
+  let [firstName, lastName] = headerInfo.name.split(" ");
+  firstName = firstName === undefined ? "" : firstName;
+  lastName = lastName === undefined ? "" : lastName;
 
   return (
     <form className="header-form">
