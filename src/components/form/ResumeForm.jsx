@@ -2,6 +2,7 @@ import "../../styles/form/ResumeForm.css";
 import FormSection from "./FormSection";
 import HeaderForm from "./HeaderForm";
 import EducationForm from "./EducationForm";
+import SkillsetsForm from "./SkillsetsForm";
 
 export default function ResumeForm({ resumeInfo, setResumeInfo }) {
   // Access/update HEADER state
@@ -24,6 +25,16 @@ export default function ResumeForm({ resumeInfo, setResumeInfo }) {
     setResumeInfo(newResumeInfo);
   }
 
+  // Access/update SKILLSETS state
+  const skillsetsInfo = resumeInfo.Skillsets; // array of skillsets
+  function setSkillsetsInfo(newSkillsetsInfo) {
+    const newResumeInfo = {
+      ...resumeInfo,
+      Skillsets: [...newSkillsetsInfo],
+    };
+    setResumeInfo(newResumeInfo);
+  }
+
   return (
     <div className="resume-form">
       <FormSection name="Header">
@@ -37,6 +48,12 @@ export default function ResumeForm({ resumeInfo, setResumeInfo }) {
           educationInfo={educationInfo}
           setEducationInfo={setEducationInfo}
         ></EducationForm>
+      </FormSection>
+      <FormSection name="Skills">
+        <SkillsetsForm
+          skillsetsInfo={skillsetsInfo}
+          setSkillsetsInfo={setSkillsetsInfo}
+        ></SkillsetsForm>
       </FormSection>
     </div>
   );
