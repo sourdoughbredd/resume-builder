@@ -15,41 +15,17 @@ export default function Resume({ resumeInfo }) {
         website={resumeInfo.Header.website}
       ></Header>
       <Section name="Education">
-        <Education
-          degree="M.S. in Mechanical Engineering"
-          school="University of California, Berkeley"
-          date="05/2021"
-          extras={[
-            { id: 0, title: "GPA", description: "3.77/4.00" },
-            {
-              id: 1,
-              title: "Emphasis",
-              description: "Modeling and control of dynamical systems",
-            },
-            {
-              id: 2,
-              title: "Select Coursework",
-              description: "Control of Unmanned Aerial Vehicles",
-            },
-          ]}
-        ></Education>
-        <Education
-          degree="B.S. in Mechanical Engineering"
-          school="University of California, Berkeley"
-          date="12/2019"
-          extras={[
-            {
-              id: 0,
-              title: "GPA",
-              description: "3.90/4.00, Graduation with Honors",
-            },
-            {
-              id: 1,
-              title: "Select Coursework",
-              description: "Lagrangian Dynamics, Advanced Linear Algebra",
-            },
-          ]}
-        ></Education>
+        {resumeInfo.Education.map((edu) => {
+          return (
+            <Education
+              key={edu.id}
+              degree={edu.degree}
+              school={edu.school}
+              date={edu.date}
+              extras={edu.extras}
+            ></Education>
+          );
+        })}
       </Section>
       <Section name="Skills">
         <Skillset
