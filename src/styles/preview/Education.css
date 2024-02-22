@@ -17,7 +17,7 @@
   text-align: right;
 }
 
-.education-details {
+.education-extras {
   display: grid;
   margin-left: 3rem;
   grid-template-columns: min-content auto;
@@ -25,7 +25,7 @@
 }
 
 .education-degree strong,
-.education-details > *:nth-child(odd) {
+.education-extras > *:nth-child(odd) {
   font-variant: small-caps;
   text-wrap: nowrap;
 }
