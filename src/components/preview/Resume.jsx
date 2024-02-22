@@ -28,41 +28,7 @@ export default function Resume({ resumeInfo }) {
         })}
       </Section>
       <Section name="Skills">
-        <Skillset
-          skillsets={[
-            {
-              name: "Programming",
-              skills: [
-                "Python",
-                "MATLAB",
-                "Simulink",
-                "C/C++",
-                "ROS",
-                "Bash",
-                "LaTeX",
-              ],
-            },
-            {
-              name: "Software",
-              skills: [
-                "LabVIEW",
-                "VMware",
-                "Git",
-                "Solidworks",
-                "Fusion",
-                "AutoCAD",
-              ],
-            },
-            {
-              name: "Other",
-              skills: [
-                "State estimation",
-                "Modeling/simulation",
-                "Technical writing and presenting",
-              ],
-            },
-          ]}
-        ></Skillset>
+        <Skillset skillsets={resumeInfo.Skillsets}></Skillset>
       </Section>
       <Section name="Work Experience">
         <WorkExperience
