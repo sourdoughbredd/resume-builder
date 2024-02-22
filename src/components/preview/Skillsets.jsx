@@ -6,7 +6,7 @@ export default function Skillsets({ skillsets }) {
   return (
     <div className="skillsets">
       {skillsets.map((skillset) => (
-        <Fragment key={skillset.name}>
+        <Fragment key={skillset.id}>
           <Bullet></Bullet>
           <p className="skillset-name">{skillset.name}</p>
           <p className="skillset-skills">{skillset.skills.join(", ")}</p>
