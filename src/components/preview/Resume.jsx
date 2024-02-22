@@ -19,7 +19,7 @@ export default function Resume({ resumeInfo }) {
           degree="M.S. in Mechanical Engineering"
           school="University of California, Berkeley"
           date="05/2021"
-          details={[
+          extras={[
             { id: 0, title: "GPA", description: "3.77/4.00" },
             {
               id: 1,
@@ -37,7 +37,7 @@ export default function Resume({ resumeInfo }) {
           degree="B.S. in Mechanical Engineering"
           school="University of California, Berkeley"
           date="12/2019"
-          details={[
+          extras={[
             {
               id: 0,
               title: "GPA",
