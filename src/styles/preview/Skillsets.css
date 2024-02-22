@@ -1,0 +1,15 @@
+.skillsets p {
+  margin: 0;
+}
+
+.skillsets {
+  display: grid;
+  grid-template-columns: min-content min-content auto;
+  align-items: center;
+}
+
+.skillset-name {
+  font-variant: small-caps;
+  font-weight: bold;
+  padding-right: 2rem;
+}
