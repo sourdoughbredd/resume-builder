@@ -1,7 +1,6 @@
 export default function HeaderForm({ headerInfo, setHeaderInfo }) {
   // Make info have firstname, lastname, phone, email, and website
   function infoChanged(e) {
-    console.log("Header info changed!");
     let newInfo = { ...headerInfo };
 
     // Name Changed
