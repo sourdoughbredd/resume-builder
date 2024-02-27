@@ -181,7 +181,6 @@ export default function WorkExperienceForm({ workInfo, setWorkInfo }) {
           </div>
         );
       })}
-      ;
       <button type="button" onClick={addWorkButtonClicked}>
         Add Work Experience
       </button>
