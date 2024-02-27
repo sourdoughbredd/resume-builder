@@ -4,17 +4,8 @@ export default function HeaderForm({ headerInfo, setHeaderInfo }) {
     let newInfo = { ...headerInfo };
 
     // Name Changed
-    if (e.target.id === "firstname" || e.target.id === "lastname") {
-      let oldFirst = "";
-      let oldLast = "";
-      if (newInfo.name) {
-        [oldFirst, oldLast] = newInfo.name.split(" ");
-      }
-      if (e.target.id === "firstname") {
-        newInfo.name = e.target.value + " " + oldLast;
-      } else {
-        newInfo.name = oldFirst + " " + e.target.value;
-      }
+    if (e.target.id === "name") {
+      newInfo.name = e.target.value;
       setHeaderInfo(newInfo);
       return;
     }
@@ -41,28 +32,15 @@ export default function HeaderForm({ headerInfo, setHeaderInfo }) {
     }
   }
 
-  // Extract first and last name
-  let [firstName, lastName] = headerInfo.name.split(" ");
-  firstName = firstName === undefined ? "" : firstName;
-  lastName = lastName === undefined ? "" : lastName;
-
   return (
     <form className="header-form">
       <input
         type="text"
-        name="firstname"
-        id="firstname"
-        placeholder="First Name"
+        name="name"
+        id="name"
+        placeholder="Full Name"
         onChange={infoChanged}
-        value={firstName}
-      />
-      <input
-        type="text"
-        name="lastname"
-        id="lastname"
-        placeholder="Last Name"
-        onChange={infoChanged}
-        value={lastName}
+        value={headerInfo.name}
       />
       <input
         type="tel"

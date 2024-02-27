@@ -48,7 +48,7 @@ export default function ResumeForm({ resumeInfo, setResumeInfo }) {
 
   return (
     <div className="resume-form">
-      <FormSection name="Header">
+      <FormSection name="Basic Info">
         <HeaderForm
           headerInfo={headerInfo}
           setHeaderInfo={setHeaderInfo}
