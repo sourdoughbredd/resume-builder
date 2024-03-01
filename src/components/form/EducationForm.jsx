@@ -1,3 +1,5 @@
+import "../../styles/form/EducationForm.css";
+
 function EducationInstance({
   educationInstanceInfo,
   setEducationInstanceInfo,
@@ -59,7 +61,7 @@ function EducationInstance({
   }
 
   return (
-    <div>
+    <div className="education-instance">
       <input
         type="text"
         name="degree"
@@ -74,20 +76,22 @@ function EducationInstance({
         value={educationInstanceInfo.school}
         onChange={basicInfoChanged}
       />
-      <input
-        type="tel"
-        name="month"
-        placeholder="Graduation Month"
-        value={month}
-        onChange={basicInfoChanged}
-      />
-      <input
-        type="tel"
-        name="year"
-        placeholder="Graduation Year"
-        value={year}
-        onChange={basicInfoChanged}
-      />
+      <div className="grad-date">
+        <input
+          type="tel"
+          name="month"
+          placeholder="Graduation Month"
+          value={month}
+          onChange={basicInfoChanged}
+        />
+        <input
+          type="tel"
+          name="year"
+          placeholder="Graduation Year"
+          value={year}
+          onChange={basicInfoChanged}
+        />
+      </div>
       <EducationInstanceExtras
         extras={educationInstanceInfo.extras}
         setExtras={setExtras}
