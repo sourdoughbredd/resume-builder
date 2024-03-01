@@ -1,3 +1,5 @@
+import "../../styles/form/SkillsetsForm.css";
+
 export default function SkillsetsForm({ skillsetsInfo, setSkillsetsInfo }) {
   function nameChanged(e, id) {
     const newSkillsetsInfo = [...skillsetsInfo];
