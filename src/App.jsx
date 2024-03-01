@@ -4,7 +4,7 @@ import ResumeForm from "./components/form/ResumeForm.jsx";
 import { useState } from "react";
 import { initialResumeInfo } from "./initialResumeInfo.js";
 
-function App() {
+export default function App() {
   const [resumeInfo, setResumeInfo] = useState(initialResumeInfo);
   return (
     <div className="app-container">
@@ -12,9 +12,9 @@ function App() {
         resumeInfo={resumeInfo}
         setResumeInfo={setResumeInfo}
       ></ResumeForm>
-      <Resume resumeInfo={resumeInfo}></Resume>
+      <div className="resume-container">
+        <Resume resumeInfo={resumeInfo}></Resume>
+      </div>
     </div>
   );
 }
-
-export default App;
