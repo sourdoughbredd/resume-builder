@@ -6,28 +6,28 @@ export default function HeaderForm({ headerInfo, setHeaderInfo }) {
     let newInfo = { ...headerInfo };
 
     // Name Changed
-    if (e.target.id === "name") {
+    if (e.target.name === "name") {
       newInfo.name = e.target.value;
       setHeaderInfo(newInfo);
       return;
     }
 
     // Phone Changed
-    if (e.target.id === "phone") {
+    if (e.target.name === "phone") {
       newInfo.phone = e.target.value;
       setHeaderInfo(newInfo);
       return;
     }
 
     // Email Changed
-    if (e.target.id === "email") {
+    if (e.target.name === "email") {
       newInfo.email = e.target.value;
       setHeaderInfo(newInfo);
       return;
     }
 
     // Website Changed
-    if (e.target.id === "website") {
+    if (e.target.name === "website") {
       newInfo.website = e.target.value;
       setHeaderInfo(newInfo);
       return;
@@ -36,38 +36,50 @@ export default function HeaderForm({ headerInfo, setHeaderInfo }) {
 
   return (
     <form className="header-form">
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Full Name"
-        onChange={infoChanged}
-        value={headerInfo.name}
-      />
-      <input
-        type="tel"
-        name="phone"
-        id="phone"
-        placeholder="Phone Number"
-        onChange={infoChanged}
-        value={headerInfo.phone}
-      />
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Email"
-        onChange={infoChanged}
-        value={headerInfo.email}
-      />
-      <input
-        type="url"
-        name="website"
-        id="website"
-        placeholder="Website"
-        onChange={infoChanged}
-        value={headerInfo.website}
-      />
+      <div className="input-group">
+        <label htmlFor="name-input">Full Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name-input"
+          placeholder="Full Name"
+          onChange={infoChanged}
+          value={headerInfo.name}
+        />
+      </div>
+      <div className="input-group">
+        <label htmlFor="phone-input">Phone Number</label>
+        <input
+          type="tel"
+          name="phone"
+          id="phone-input"
+          placeholder="Phone Number"
+          onChange={infoChanged}
+          value={headerInfo.phone}
+        />
+      </div>
+      <div className="input-group">
+        <label htmlFor="email-input">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email-input"
+          placeholder="Email"
+          onChange={infoChanged}
+          value={headerInfo.email}
+        />
+      </div>
+      <div className="input-group">
+        <label htmlFor="website-input">Website URL</label>
+        <input
+          type="url"
+          name="website"
+          id="website-input"
+          placeholder="Website"
+          onChange={infoChanged}
+          value={headerInfo.website}
+        />
+      </div>
     </form>
   );
 }

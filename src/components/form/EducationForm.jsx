@@ -62,37 +62,63 @@ function EducationInstance({
 
   return (
     <div className="education-instance">
-      <input
-        type="text"
-        name="degree"
-        placeholder="Degree"
-        value={educationInstanceInfo.degree}
-        onChange={basicInfoChanged}
-      />
-      <input
-        type="text"
-        name="school"
-        placeholder="School"
-        value={educationInstanceInfo.school}
-        onChange={basicInfoChanged}
-      />
-      <div className="grad-date">
+      <div className="input-group">
+        <label htmlFor={"degree-input-" + educationInstanceInfo.id}>
+          Degree
+        </label>
         <input
-          type="tel"
-          name="month"
-          placeholder="Graduation Month"
-          value={month}
-          onChange={basicInfoChanged}
-        />
-        <input
-          type="tel"
-          name="year"
-          placeholder="Graduation Year"
-          value={year}
+          type="text"
+          name="degree"
+          id={"degree-input-" + educationInstanceInfo.id}
+          placeholder="M.S. in Mechanical Engineering"
+          value={educationInstanceInfo.degree}
           onChange={basicInfoChanged}
         />
       </div>
+      <div className="input-group">
+        <label htmlFor={"school-input-" + educationInstanceInfo.id}>
+          School
+        </label>
+        <input
+          type="text"
+          name="school"
+          id={"school-input-" + educationInstanceInfo.id}
+          placeholder="University of California, Berkeley"
+          value={educationInstanceInfo.school}
+          onChange={basicInfoChanged}
+        />
+      </div>
+      <div className="grad-date">
+        <div className="input-group">
+          <label htmlFor={"month-input-" + educationInstanceInfo.id}>
+            Graduation Month
+          </label>
+          <input
+            type="tel"
+            name="month"
+            id={"month-input-" + educationInstanceInfo.id}
+            placeholder="MM"
+            value={month}
+            onChange={basicInfoChanged}
+          />
+        </div>
+        <div className="input-group">
+          <label htmlFor={"year-input-" + educationInstanceInfo.id}>
+            Graduation Year
+          </label>
+          <input
+            type="tel"
+            name="year"
+            id={"year-input-" + educationInstanceInfo.id}
+            placeholder="YYYY"
+            value={year}
+            onChange={basicInfoChanged}
+          />
+        </div>
+      </div>
+      <h3>Extra Details</h3>
       <EducationInstanceExtras
+        eduId={educationInstanceInfo.id}
         extras={educationInstanceInfo.extras}
         setExtras={setExtras}
       ></EducationInstanceExtras>
@@ -103,7 +129,7 @@ function EducationInstance({
   );
 }
 
-function EducationInstanceExtras({ extras, setExtras }) {
+function EducationInstanceExtras({ eduId, extras, setExtras }) {
   // extras should be an array of objects of form {id, title, description}
 
   function titleChanged(e, id) {
@@ -127,20 +153,34 @@ function EducationInstanceExtras({ extras, setExtras }) {
       {extras.map((ext) => {
         return (
           <div className="extras-single" key={ext.id}>
-            <input
-              type="text"
-              className="education-extras-title"
-              placeholder="Title"
-              value={ext.title}
-              onChange={(e) => titleChanged(e, ext.id)}
-            />
-            <input
-              type="text"
-              className="education-extras-description"
-              placeholder="Description"
-              value={ext.description}
-              onChange={(e) => descriptionChanged(e, ext.id)}
-            />
+            <div className="input-group">
+              <label htmlFor={`education-extras-title-${eduId}-${ext.id}`}>
+                Title
+              </label>
+              <input
+                type="text"
+                className="education-extras-title"
+                id={`education-extras-title-${eduId}-${ext.id}`}
+                placeholder="GPA"
+                value={ext.title}
+                onChange={(e) => titleChanged(e, ext.id)}
+              />
+            </div>
+            <div className="input-group">
+              <label
+                htmlFor={`education-extras-description-${eduId}-${ext.id}`}
+              >
+                Description
+              </label>
+              <input
+                type="text"
+                className="education-extras-description"
+                id={`education-extras-description-${eduId}-${ext.id}`}
+                placeholder="3.9/4.0"
+                value={ext.description}
+                onChange={(e) => descriptionChanged(e, ext.id)}
+              />
+            </div>
           </div>
         );
       })}

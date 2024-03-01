@@ -117,55 +117,80 @@ export default function WorkExperienceForm({ workInfo, setWorkInfo }) {
 
         return (
           <div className="work-experience" key={work.id}>
-            <input
-              type="text"
-              name="title"
-              placeholder="Title"
-              value={work.title}
-              onChange={(e) => basicInfoChanged(e, work.id)}
-            />
-            <input
-              type="text"
-              name="employer"
-              placeholder="Employer"
-              value={work.employer}
-              onChange={(e) => basicInfoChanged(e, work.id)}
-            />
-            <input
-              type="text"
-              name="start-month"
-              placeholder="Start Month"
-              value={startMonth}
-              onChange={(e) => basicInfoChanged(e, work.id)}
-            />
-            <input
-              type="text"
-              name="start-year"
-              placeholder="Start Year"
-              value={startYear}
-              onChange={(e) => basicInfoChanged(e, work.id)}
-            />
-            <input
-              type="text"
-              name="end-month"
-              placeholder="End Month"
-              value={endMonth}
-              onChange={(e) => basicInfoChanged(e, work.id)}
-            />
-            <input
-              type="text"
-              name="end-year"
-              placeholder="End Year"
-              value={endYear}
-              onChange={(e) => basicInfoChanged(e, work.id)}
-            />
+            <div className="input-group">
+              <label htmlFor={"work-title-" + work.id}>Job Title</label>
+              <input
+                type="text"
+                name="title"
+                id={"work-title-" + work.id}
+                placeholder="Flight Controls Engineer (F-18)"
+                value={work.title}
+                onChange={(e) => basicInfoChanged(e, work.id)}
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor={"work-employer-" + work.id}>Employer</label>
+              <input
+                type="text"
+                name="employer"
+                id={"work-employer-" + work.id}
+                placeholder="Naval Air Systems Command (NAVAIR)"
+                value={work.employer}
+                onChange={(e) => basicInfoChanged(e, work.id)}
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor={"work-start-month-" + work.id}>Start Month</label>
+              <input
+                type="text"
+                name="start-month"
+                id={"work-start-month-" + work.id}
+                placeholder="MM"
+                value={startMonth}
+                onChange={(e) => basicInfoChanged(e, work.id)}
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor={"work-start-year-" + work.id}>Start Year</label>
+              <input
+                type="text"
+                name="start-year"
+                id={"work-start-year-" + work.id}
+                placeholder="YYYY"
+                value={startYear}
+                onChange={(e) => basicInfoChanged(e, work.id)}
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor={"work-end-month-" + work.id}>End Month</label>
+              <input
+                type="text"
+                name="end-month"
+                id={"work-end-month-" + work.id}
+                placeholder="MM"
+                value={endMonth}
+                onChange={(e) => basicInfoChanged(e, work.id)}
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor={"work-end-year-" + work.id}>End Year</label>
+              <input
+                type="text"
+                name="end-year"
+                id={"work-end-year-" + work.id}
+                placeholder="YYYY"
+                value={endYear}
+                onChange={(e) => basicInfoChanged(e, work.id)}
+              />
+            </div>
+            <h3>Responsibilities</h3>
             <ul className="work-responsibilites">
               {work.responsibilities.map((resp) => (
                 <li key={resp.id}>
                   <input
                     type="text"
                     name="work-responsibility"
-                    placeholder="Responsibility"
+                    placeholder="Boosted Monte Carlo data aggregation rate by 6x using parallel processing, saving..."
                     value={resp.text}
                     onChange={(e) => responsibilityChange(e, work.id, resp.id)}
                   />

@@ -37,20 +37,30 @@ export default function SkillsetsForm({ skillsetsInfo, setSkillsetsInfo }) {
     <div className="skillsets-form">
       {skillsetsInfo.map((skillset) => (
         <div className="skillset" key={skillset.id}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Skillset Name"
-            value={skillset.name}
-            onChange={(e) => nameChanged(e, skillset.id)}
-          />
-          <input
-            type="text"
-            name="skills"
-            placeholder="Skills"
-            value={skillset.skills.join(", ")}
-            onChange={(e) => skillsChanged(e, skillset.id)}
-          />
+          <div className="input-group">
+            <label htmlFor={"skillset-name-" + skillset.id}>
+              Skillset Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id={"skillset-name-" + skillset.id}
+              placeholder="Programming"
+              value={skillset.name}
+              onChange={(e) => nameChanged(e, skillset.id)}
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor={"skillset-skills-" + skillset.id}>Skills</label>
+            <input
+              type="text"
+              name="skills"
+              id={"skillset-skills-" + skillset.id}
+              placeholder="Python, C++, Java, ..."
+              value={skillset.skills.join(", ")}
+              onChange={(e) => skillsChanged(e, skillset.id)}
+            />
+          </div>
         </div>
       ))}
       <button type="button" onClick={addSkillsetButtonClicked}>
