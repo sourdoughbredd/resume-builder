@@ -42,7 +42,7 @@ export default function HeaderForm({ headerInfo, setHeaderInfo }) {
           type="text"
           name="name"
           id="name-input"
-          placeholder="Full Name"
+          placeholder="Brett Bussell"
           onChange={infoChanged}
           value={headerInfo.name}
         />
@@ -53,7 +53,7 @@ export default function HeaderForm({ headerInfo, setHeaderInfo }) {
           type="tel"
           name="phone"
           id="phone-input"
-          placeholder="Phone Number"
+          placeholder="(209) 585 5343)"
           onChange={infoChanged}
           value={headerInfo.phone}
         />
@@ -64,7 +64,7 @@ export default function HeaderForm({ headerInfo, setHeaderInfo }) {
           type="email"
           name="email"
           id="email-input"
-          placeholder="Email"
+          placeholder="bwbussell24@gmail.com"
           onChange={infoChanged}
           value={headerInfo.email}
         />
@@ -75,7 +75,7 @@ export default function HeaderForm({ headerInfo, setHeaderInfo }) {
           type="url"
           name="website"
           id="website-input"
-          placeholder="Website"
+          placeholder="www.linkedin.com/in/brett-bussell"
           onChange={infoChanged}
           value={headerInfo.website}
         />
