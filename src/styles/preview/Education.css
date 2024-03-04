@@ -2,30 +2,30 @@
   margin: 0;
 }
 
-.education-header {
+.education .education-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.education-degree {
+.education .education-degree {
   flex-grow: 1;
 }
 
-.education-date {
+.education .education-date {
   justify-self: flex-end;
   text-align: right;
 }
 
-.education-extras {
+.education .education-extras {
   display: grid;
   margin-left: 3rem;
   grid-template-columns: min-content auto;
   column-gap: 2rem;
 }
 
-.education-degree strong,
-.education-extras > *:nth-child(odd) {
+.education .education-degree strong,
+.education .education-extras > *:nth-child(odd) {
   font-variant: small-caps;
   text-wrap: nowrap;
 }
