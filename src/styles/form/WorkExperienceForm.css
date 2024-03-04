@@ -1,0 +1,71 @@
+.work-experience-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.work-experience-form .work-experience-instance {
+  background-color: hsl(0, 0%, 22%);
+  padding: 1.5rem 2rem 2rem;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.work-experience-instance .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.work-experience-instance .form-group.work-dates {
+  gap: 2rem;
+}
+
+.work-experience-instance .title-employer > * {
+  min-width: 250px;
+}
+
+.work-experience-instance .title-employer .input-group.work-title {
+  flex: 1 auto;
+}
+
+.work-experience-instance .title-employer .input-group.work-employer {
+  flex: 2 auto;
+}
+
+.work-experience-instance .form-group.start-date,
+.work-experience-instance .form-group.end-date {
+  gap: 1rem;
+}
+
+.work-experience-instance .date-group {
+  max-width: 100px;
+}
+
+.work-experience-instance .responsibilities-container {
+  margin-left: 5%;
+}
+
+.work-experience-instance h3 {
+  margin: 0.5rem 0 1rem;
+}
+
+.work-experience-instance ul {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
+.work-experience-instance ul.work-responsibilites {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.work-experience-instance li textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
