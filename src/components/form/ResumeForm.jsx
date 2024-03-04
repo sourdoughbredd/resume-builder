@@ -4,6 +4,8 @@ import HeaderForm from "./HeaderForm";
 import EducationForm from "./EducationForm";
 import SkillsetsForm from "./SkillsetsForm";
 import WorkExperienceForm from "./WorkExperienceForm";
+import { emptyResumeInfo } from "../../emptyResumeInfo";
+import { exampleResumeInfo } from "../../exampleResumeInfo";
 
 export default function ResumeForm({ resumeInfo, setResumeInfo }) {
   // Access/update HEADER state
@@ -46,8 +48,26 @@ export default function ResumeForm({ resumeInfo, setResumeInfo }) {
     setResumeInfo(newResumeInfo);
   }
 
+  // Clear form button callback
+  function clearFormPressed() {
+    setResumeInfo(emptyResumeInfo);
+  }
+
+  // Load example button callback
+  function loadExamplePressed() {
+    setResumeInfo(exampleResumeInfo);
+  }
+
   return (
     <div className="resume-form">
+      <div className="resume-toolbar">
+        <button className="clear-form" onClick={clearFormPressed}>
+          Clear Form
+        </button>
+        <button className="load-example" onClick={loadExamplePressed}>
+          Load Example
+        </button>
+      </div>
       <FormSection name="Basic Info">
         <HeaderForm
           headerInfo={headerInfo}
