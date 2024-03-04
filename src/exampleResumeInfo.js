@@ -1,4 +1,4 @@
-export const initialResumeInfo = {
+export const exampleResumeInfo = {
   Header: {
     name: "Brett Bussell",
     phone: "(209) 585 5343",
