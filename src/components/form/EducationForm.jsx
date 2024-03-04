@@ -62,58 +62,60 @@ function EducationInstance({
 
   return (
     <div className="education-instance">
-      <div className="input-group">
-        <label htmlFor={"degree-input-" + educationInstanceInfo.id}>
-          Degree
-        </label>
-        <input
-          type="text"
-          name="degree"
-          id={"degree-input-" + educationInstanceInfo.id}
-          placeholder="M.S. in Mechanical Engineering"
-          value={educationInstanceInfo.degree}
-          onChange={basicInfoChanged}
-        />
-      </div>
-      <div className="input-group">
-        <label htmlFor={"school-input-" + educationInstanceInfo.id}>
-          School
-        </label>
-        <input
-          type="text"
-          name="school"
-          id={"school-input-" + educationInstanceInfo.id}
-          placeholder="University of California, Berkeley"
-          value={educationInstanceInfo.school}
-          onChange={basicInfoChanged}
-        />
-      </div>
-      <div className="grad-date">
+      <div className="education-basic-info">
         <div className="input-group">
-          <label htmlFor={"month-input-" + educationInstanceInfo.id}>
-            Graduation Month
+          <label htmlFor={"degree-input-" + educationInstanceInfo.id}>
+            Degree
           </label>
           <input
-            type="tel"
-            name="month"
-            id={"month-input-" + educationInstanceInfo.id}
-            placeholder="MM"
-            value={month}
+            type="text"
+            name="degree"
+            id={"degree-input-" + educationInstanceInfo.id}
+            placeholder="M.S. in Mechanical Engineering"
+            value={educationInstanceInfo.degree}
             onChange={basicInfoChanged}
           />
         </div>
         <div className="input-group">
-          <label htmlFor={"year-input-" + educationInstanceInfo.id}>
-            Graduation Year
+          <label htmlFor={"school-input-" + educationInstanceInfo.id}>
+            School
           </label>
           <input
-            type="tel"
-            name="year"
-            id={"year-input-" + educationInstanceInfo.id}
-            placeholder="YYYY"
-            value={year}
+            type="text"
+            name="school"
+            id={"school-input-" + educationInstanceInfo.id}
+            placeholder="University of California, Berkeley"
+            value={educationInstanceInfo.school}
             onChange={basicInfoChanged}
           />
+        </div>
+        <div className="grad-date">
+          <div className="input-group">
+            <label htmlFor={"month-input-" + educationInstanceInfo.id}>
+              Grad Month
+            </label>
+            <input
+              type="tel"
+              name="month"
+              id={"month-input-" + educationInstanceInfo.id}
+              placeholder="MM"
+              value={month}
+              onChange={basicInfoChanged}
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor={"year-input-" + educationInstanceInfo.id}>
+              Grad Year
+            </label>
+            <input
+              type="tel"
+              name="year"
+              id={"year-input-" + educationInstanceInfo.id}
+              placeholder="YYYY"
+              value={year}
+              onChange={basicInfoChanged}
+            />
+          </div>
         </div>
       </div>
       <h3>Extra Details</h3>
