@@ -2,10 +2,10 @@ import "./App.css";
 import Resume from "./components/preview/Resume.jsx";
 import ResumeForm from "./components/form/ResumeForm.jsx";
 import { useState } from "react";
-import { initialResumeInfo } from "./initialResumeInfo.js";
+import { exampleResumeInfo } from "./exampleResumeInfo.js";
 
 export default function App() {
-  const [resumeInfo, setResumeInfo] = useState(initialResumeInfo);
+  const [resumeInfo, setResumeInfo] = useState(exampleResumeInfo);
   return (
     <div className="app-container">
       <ResumeForm
