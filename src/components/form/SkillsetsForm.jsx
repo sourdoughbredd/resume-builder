@@ -52,14 +52,15 @@ export default function SkillsetsForm({ skillsetsInfo, setSkillsetsInfo }) {
           </div>
           <div className="input-group">
             <label htmlFor={"skillset-skills-" + skillset.id}>Skills</label>
-            <input
-              type="text"
+            <textarea
               name="skills"
               id={"skillset-skills-" + skillset.id}
+              cols="30"
+              rows="1"
               placeholder="Python, C++, Java, ..."
               value={skillset.skills.join(", ")}
               onChange={(e) => skillsChanged(e, skillset.id)}
-            />
+            ></textarea>
           </div>
         </div>
       ))}
