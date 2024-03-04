@@ -1,13 +1,17 @@
+.resume-container {
+}
+
 .resume {
   background-color: #f1f1f1;
-  color: rgb(34, 34, 34);
+  color: #222222;
   box-sizing: border-box;
-  max-width: 850px;
-  width: 50%;
-  aspect-ratio: 8.5 / 11;
   font-size: 16px;
+  width: 816px;
+  aspect-ratio: 8.5 / 11;
+  transform-origin: top left;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  overflow: hidden;
 }
