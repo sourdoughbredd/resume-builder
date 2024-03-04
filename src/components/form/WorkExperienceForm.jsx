@@ -1,3 +1,5 @@
+import "../../styles/form/WorkExperienceForm.css";
+
 export default function WorkExperienceForm({ workInfo, setWorkInfo }) {
   function basicInfoChanged(e, id) {
     const newWorkInfo = [...workInfo];
@@ -116,93 +118,110 @@ export default function WorkExperienceForm({ workInfo, setWorkInfo }) {
         const [endMonth, endYear] = work.end.split("/");
 
         return (
-          <div className="work-experience" key={work.id}>
-            <div className="input-group">
-              <label htmlFor={"work-title-" + work.id}>Job Title</label>
-              <input
-                type="text"
-                name="title"
-                id={"work-title-" + work.id}
-                placeholder="Flight Controls Engineer (F-18)"
-                value={work.title}
-                onChange={(e) => basicInfoChanged(e, work.id)}
-              />
+          <div className="work-experience-instance" key={work.id}>
+            <div className="form-group title-employer">
+              <div className="input-group work-title">
+                <label htmlFor={"work-title-" + work.id}>Job Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  id={"work-title-" + work.id}
+                  placeholder="Senior Software Engineer"
+                  value={work.title}
+                  onChange={(e) => basicInfoChanged(e, work.id)}
+                />
+              </div>
+              <div className="input-group work-employer">
+                <label htmlFor={"work-employer-" + work.id}>Employer</label>
+                <input
+                  type="text"
+                  name="employer"
+                  id={"work-employer-" + work.id}
+                  placeholder="Big Tech Company"
+                  value={work.employer}
+                  onChange={(e) => basicInfoChanged(e, work.id)}
+                />
+              </div>
             </div>
-            <div className="input-group">
-              <label htmlFor={"work-employer-" + work.id}>Employer</label>
-              <input
-                type="text"
-                name="employer"
-                id={"work-employer-" + work.id}
-                placeholder="Naval Air Systems Command (NAVAIR)"
-                value={work.employer}
-                onChange={(e) => basicInfoChanged(e, work.id)}
-              />
-            </div>
-            <div className="input-group">
-              <label htmlFor={"work-start-month-" + work.id}>Start Month</label>
-              <input
-                type="text"
-                name="start-month"
-                id={"work-start-month-" + work.id}
-                placeholder="MM"
-                value={startMonth}
-                onChange={(e) => basicInfoChanged(e, work.id)}
-              />
-            </div>
-            <div className="input-group">
-              <label htmlFor={"work-start-year-" + work.id}>Start Year</label>
-              <input
-                type="text"
-                name="start-year"
-                id={"work-start-year-" + work.id}
-                placeholder="YYYY"
-                value={startYear}
-                onChange={(e) => basicInfoChanged(e, work.id)}
-              />
-            </div>
-            <div className="input-group">
-              <label htmlFor={"work-end-month-" + work.id}>End Month</label>
-              <input
-                type="text"
-                name="end-month"
-                id={"work-end-month-" + work.id}
-                placeholder="MM"
-                value={endMonth}
-                onChange={(e) => basicInfoChanged(e, work.id)}
-              />
-            </div>
-            <div className="input-group">
-              <label htmlFor={"work-end-year-" + work.id}>End Year</label>
-              <input
-                type="text"
-                name="end-year"
-                id={"work-end-year-" + work.id}
-                placeholder="YYYY"
-                value={endYear}
-                onChange={(e) => basicInfoChanged(e, work.id)}
-              />
-            </div>
-            <h3>Responsibilities</h3>
-            <ul className="work-responsibilites">
-              {work.responsibilities.map((resp) => (
-                <li key={resp.id}>
+            <div className="form-group work-dates">
+              <div className="form-group start-date">
+                <div className="input-group date-group start-month">
+                  <label htmlFor={"work-start-month-" + work.id}>
+                    Start Month
+                  </label>
                   <input
                     type="text"
-                    name="work-responsibility"
-                    placeholder="Boosted Monte Carlo data aggregation rate by 6x using parallel processing, saving..."
-                    value={resp.text}
-                    onChange={(e) => responsibilityChange(e, work.id, resp.id)}
+                    name="start-month"
+                    id={"work-start-month-" + work.id}
+                    placeholder="MM"
+                    value={startMonth}
+                    onChange={(e) => basicInfoChanged(e, work.id)}
                   />
-                </li>
-              ))}
-            </ul>
-            <button
-              type="button"
-              onClick={(e) => addResponsibilityButtonClicked(e, work.id)}
-            >
-              Add Responsibility
-            </button>
+                </div>
+                <div className="input-group date-group start-year">
+                  <label htmlFor={"work-start-year-" + work.id}>
+                    Start Year
+                  </label>
+                  <input
+                    type="text"
+                    name="start-year"
+                    id={"work-start-year-" + work.id}
+                    placeholder="YYYY"
+                    value={startYear}
+                    onChange={(e) => basicInfoChanged(e, work.id)}
+                  />
+                </div>
+              </div>
+              <div className="form-group end-date">
+                <div className="input-group date-group end-month">
+                  <label htmlFor={"work-end-month-" + work.id}>End Month</label>
+                  <input
+                    type="text"
+                    name="end-month"
+                    id={"work-end-month-" + work.id}
+                    placeholder="MM"
+                    value={endMonth}
+                    onChange={(e) => basicInfoChanged(e, work.id)}
+                  />
+                </div>
+                <div className="input-group date-group end-year">
+                  <label htmlFor={"work-end-year-" + work.id}>End Year</label>
+                  <input
+                    type="text"
+                    name="end-year"
+                    id={"work-end-year-" + work.id}
+                    placeholder="YYYY"
+                    value={endYear}
+                    onChange={(e) => basicInfoChanged(e, work.id)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="responsibilities-container">
+              <h3>Responsibilities</h3>
+              <ul className="work-responsibilites">
+                {work.responsibilities.map((resp) => (
+                  <li key={resp.id}>
+                    <textarea
+                      name="work-responsibility"
+                      cols="40"
+                      rows="1"
+                      placeholder="Led the migration of legacy systems to microservices architecture, ..."
+                      value={resp.text}
+                      onChange={(e) =>
+                        responsibilityChange(e, work.id, resp.id)
+                      }
+                    ></textarea>
+                  </li>
+                ))}
+              </ul>
+              <button
+                type="button"
+                onClick={(e) => addResponsibilityButtonClicked(e, work.id)}
+              >
+                Add Responsibility
+              </button>
+            </div>
           </div>
         );
       })}
